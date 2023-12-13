@@ -1,0 +1,144 @@
+{% extends 'homepage/base.html' %}
+{% load static %}
+
+{% block head %}
+
+    <style>
+        /* Reset some default styles for consistency */
+        body, h1, p {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Container for the dive section */
+        .container {
+            display: flex; /* Use flexbox for layout */
+            justify-content: top !important; /* Center the content horizontally */
+            align-items: top; /* Center the content vertically */
+            height: 120vh; /* Set the height of the container to 100% of the viewport height */
+        }
+
+        /* Style for the text div */
+        .text {
+            flex: 1; /* Take up remaining available space */
+            padding: 20px; /* Add some padding for spacing */
+            background-color: #f4f4f4; /* Set background color */
+            text-align: center; /* Center the text */
+        }
+
+        /* Style for the image div */
+        .image {
+            flex: 1; /* Take up remaining available space */
+            overflow: hidden; /* Hide any overflowing content */
+
+        }
+
+        /* Responsive image styling */
+        .image img {
+            max-width: 100%; /* Make the image fill its container */
+            width: 100%;
+            height: auto; /* Maintain the aspect ratio */
+            display: block; /* Remove default image spacing */
+            margin-top: -20px; /* Adjust this value to bring the image higher on the page */
+}
+        }
+
+
+
+    </style>
+<style type="text/css">
+        #mc_embed_signup
+        {background:#fff; false;clear:left; font:14px Helvetica,Arial,sans-serif; width: 600px;}
+
+        /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+           We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+</style>
+{% endblock %}
+
+{% block title %}Home - {{ block.super }}{% endblock %}
+
+{% block nav %}
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'home' %}">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'About' %}">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'Services' %}">Services</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'Contact' %}">Contact</a>
+            </li>
+{% endblock%}
+
+{% block content %}
+<!-- Apply the .container class to create the dive section -->
+
+<div class="container">
+    <!-- Text div -->
+    <div class="text">
+        <h1>Freedom Awaits</h1>
+        <p>Step into the sonic kaleidoscope of The Jonestown Exorcists,
+            where psychedelic blues meets an electric storm of musical transcendence.
+            This band doesn't just play music; they summon sonic spirits that dance through
+            your veins and linger in your soul. Brace yourself for an unforgettable journey as
+            their dynamic live performances unfold, weaving a tapestry of sound that blurs the lines
+            between reality and reverie. The Jonestown Exorcists don't just perform; they orchestrate
+            a psychedelic exorcism that leaves you bewitched, bedazzled, and begging for more. If you're
+            ready to dive into a musical vortex that defies description, join the pilgrimage to witness The
+            Jonestown Exorcists – where the blues becomes an ethereal voyage and every note is a brushstroke
+            on the canvas of your musical awakening.
+
+
+
+
+
+</p>
+    </div>
+
+    <!-- Image div -->
+    <div class="image">
+        <img id="slideshowImage" src="{% static 'images/CrazyCrowd.jpg' %}" alt="Slideshow Image">
+    </div>
+</div>
+</div>
+
+{% endblock %}
+
+{% block script %}
+<script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script><script type="text/javascript">(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='BIRTHDAY';ftypes[5]='birthday';}(jQuery));var $mcj = jQuery.noConflict(true);</script></div>
+
+<script>
+     var imageUrl1 = "{% static 'images/BryantLongboardTrippy.jpg' %}";
+     var imageUrl2 = "{% static 'images/Beautiful.jpg' %}";
+     var imageUrl3 = "{% static 'images/CrazyCrowd.jpg' %}";
+     var imageUrl4 = "{% static 'images/vitruvianMan.jpg' %}";
+    // Array of image URLs
+    var imageUrls = [
+        imageUrl1,
+        imageUrl2,
+        imageUrl3,
+        imageUrl4,
+        // Add more image URLs as needed
+    ];
+
+    // Index to track the current image
+    var currentIndex = 0;
+
+    // Function to change the image
+    function changeImage() {
+        // Update the image source
+        document.getElementById('slideshowImage').src = imageUrls[currentIndex];
+
+        // Increment the index or reset to 0 if it reaches the end
+        currentIndex = (currentIndex + 1) % imageUrls.length;
+    }
+
+    // Set interval to change image every 6 seconds (6000 milliseconds)
+    setInterval(changeImage, 6000);
+</script>
+
+{% endblock %}
+
+

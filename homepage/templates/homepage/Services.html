@@ -1,0 +1,91 @@
+{% extends 'homepage/base.html' %}
+
+{% block style %}
+<style>
+    .services{
+    background: linear-gradient(to right, #ff8a00, #da1b60);
+    }
+    .services2{
+    background: linear-gradient(to right, #ffd700, #ffffff);
+    }
+</style>
+{% endblock %}
+
+{% block title %}Home - {{ block.super }}{% endblock %}
+
+{% block nav %}
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'home' %}">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'About' %}">About</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'Services' %}">Services</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'Contact' %}">Contact</a>
+            </li>
+{% endblock%}
+
+{% block content %}
+<!-- Irresistible 90's Classics -->
+<section class="services">
+    <h2>Irresistible 90's Classics</h2>
+    <p>Immerse your event in the nostalgic sounds of the '90s with our expertly curated repertoire of upbeat and catchy covers that transport your audience back in time.</p>
+</section>
+
+<!-- Soulful Blues Mastery -->
+<section class="services2">
+    <h2>Soulful Blues Mastery</h2>
+    <p>Elevate the mood with the soul-stirring tones of our blues expertise. Our band seamlessly weaves in bluesy elements, adding a touch of depth and emotion to your musical experience.</p>
+</section>
+
+<!-- Compelling Originals -->
+<section class="services">
+    <h2>Compelling Originals</h2>
+    <p>Unveil a world of musical innovation with our collection of original compositions. Our catchy, upbeat originals are crafted to leave a lasting impression, ensuring your event stands out from the ordinary.</p>
+</section>
+
+<!-- Competitive Pricing -->
+<section class="services2">
+    <h2>Competitive Pricing</h2>
+    <p>Experience top-tier musical entertainment without breaking the bank. We take pride in offering the most competitive prices in our area, making quality live music accessible for a variety of events and budgets.</p>
+</section>
+
+<!-- All-Inclusive Sound Solutions -->
+<section class="services">
+    <h2>All-Inclusive Sound Solutions</h2>
+    <p>Sit back and relax as we take care of all your sound needs. Our comprehensive sound services include complete sound systems and Bluetooth speakers, ensuring seamless audio quality and a hassle-free experience for you and your guests.</p>
+</section>
+
+<!-- Subtle Sonic Alchemy -->
+<section class="services2">
+    <h2>Subtle Sonic Alchemy</h2>
+    <p>Feel the subtle magic as our music weaves a hypnotic tapestry, creating an immersive atmosphere that captivates and resonates with every listener. Our performances are designed to subtly enchant, leaving a lasting imprint on the hearts and minds of your audience.</p>
+</section>
+
+<!-- Mobile Bluetooth Excellence -->
+<section class="services">
+    <h2>Mobile Bluetooth Excellence</h2>
+    <p>With our own Bluetooth speakers, we bring the convenience of wireless connectivity to your event. Enjoy flexibility in venue setup and an unencumbered musical experience, creating an ambiance that flows effortlessly.</p>
+</section>
+
+<!-- Tailored Musical Experiences -->
+<section class="services2">
+    <h2>Tailored Musical Experiences</h2>
+    <p>We understand that every event is unique. Our band works closely with you to tailor our performance to suit the specific atmosphere and vibe you desire, ensuring a customized musical experience that aligns perfectly with your vision.</p>
+</section>
+
+<!-- Choose The Jonestown Exorcists -->
+<section class="services">
+    <h2>Choose The Jonestown Exorcists</h2>
+    <p>Where competitive pricing meets unparalleled musical excellence. Let our subtle yet powerful musical enchantment elevate your event to unforgettable heights.</p>
+</section>
+
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'homepage/base.html' %}
+
+{% block title %}Home - {{ block.super }}{% endblock %}
+
+{% block nav %}
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'home' %}">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'About' %}">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'Services' %}">Services</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'Contact' %}">Contact</a>
+            </li>
+{% endblock%}
+
+{% block content %}
+<!-- HTML template using Bootstrap and Django template syntax -->
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h2 class="mb-4">Contact Us</h2>
+
+            <!-- Django form rendering -->
+            <form method="post" action="{% url 'Contact' %}">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

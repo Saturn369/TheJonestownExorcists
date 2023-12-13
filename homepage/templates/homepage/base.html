@@ -1,0 +1,187 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Agbalumo&family=Kaushan+Script&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Agbalumo&display=swap" rel="stylesheet">
+    <!-- Link to Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    {% block head %}{% endblock %}
+    <style>
+        #mc_embed_signup
+        {background:#fff; false;clear:left; font:14px Helvetica,Arial,sans-serif; width: 600px;}
+        /* Reset some default styles for consistency */
+        body {
+            background-color: black !important;
+            /* Replace 'path/to/your/image.jpg' with the actual path to your image file */
+            background-size: cover;
+            /* You can use 'contain' or other values depending on your needs */
+            background-position: center center;
+            /* Adjust the position if needed */
+            background-repeat: no-repeat;
+            /* Prevent the background image from repeating */
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Style for the navigation bar */
+        nav {
+            position: fixed;
+            background-color: #333;
+            color: #fff;
+            padding: 10px !important;
+            text-align: center;
+            width: 100%;
+            top: 0;
+        }
+
+        /* Container for the dive section */
+        .container {
+            display: flex !important;
+            /* Use flexbox for layout */
+            justify-content: flex-start !important;
+            /* Center the content horizontally */
+            height: 100vh !important;
+            /* Set the height of the container to 100% of the viewport height */
+            align-items: flex-end !important;
+            margin-top: 0px !important;
+            /* Add some top margin to create space underneath the fixed navigation bar */
+        }
+
+        /* Style for the text div */
+        .text {
+            flex: 1;
+            /* Take up remaining available space */
+            padding: 0px;
+            /* Add some padding for spacing */
+            background-color: #f4f4f4;
+            /* Set background color */
+            text-align: center;
+            /* Center the text */
+            /* Set Height */
+            height: 500px;
+            margin-top: 0px !important;
+            /*set the text and image div right under the nav bar*/
+            font-family: 'kaushan script', sans-serif;
+            font-size: 21px;
+            background: linear-gradient(to right, #ff8a00, #da1b60);
+            /*Set the font style for the .text class*/
+        }
+
+        /* Style for the image div */
+        .image {
+            flex: 1;
+            /* Take up remaining available space */
+            overflow: hidden;
+            /* Hide any overflowing content */
+        }
+
+        /* Responsive image styling */
+        .image img {
+            width: 100%;
+            /* Make the image fill its container */
+            height: auto;
+            /* Maintain the aspect ratio */
+            display: block;
+            /* Remove default image spacing */
+        }
+    </style>
+    {% block style %}{% endblock %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}My Django Website{% endblock %}</title>
+</head>
+<body style="background-color: #e0e0e0;">
+
+<!-- Bootstrap navigation bar -->
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#"><img src="{% static 'images/Bannersmall.jpg' %}" alt="Your Image Alt Text"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+            aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            {% block nav %}
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'home' %}">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'About' %}">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'Services' %}">Services</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'Contact' %}">Contact</a>
+            </li>
+            {% endblock%}
+            <li class="nav-item">
+                <a class="nav-link" href="#">|</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="https://www.facebook.com/thejonestownexorcists" target="_blank">
+                    <img src="{% static 'images/fBookSmall.png' %}" alt="FaceBook Link"></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="https://www.instagram.com/thejonestownexorcists/" target="_blank">
+                    <img src="{% static 'images/instaSmall.png' %}" alt="Instagram Link"></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="https://www.youtube.com/channel/UCcu5IwqprbyyPnD_5obRQfQ" target="_blank">
+                    <img src="{% static 'images/youtubeSmall.png' %}" alt="Youtube Link"></a>
+            </li>
+
+
+
+        </ul>
+    </div>
+</nav>
+
+<!-- Your content goes here -->
+{% block content %}
+{% endblock%}
+<!-- Mail Chimp Code -->
+<div class="container">
+<div id="mc_embed_shell">
+<div id="mc_embed_signup">
+    <form action="https://gmail.us21.list-manage.com/subscribe/post?u=c3e23f6715066c9306920614a&amp;id=f5e0ffd1bd&amp;f_id=00b6e7e6f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
+        <div id="mc_embed_signup_scroll"><h2 class="mailchimp">Subscribe! :)</h2>
+            <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
+            <div class="mc-field-group"><label for="mce-EMAIL">Email Address <span class="asterisk">*</span></label><input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required="" value=""><span id="mce-EMAIL-HELPERTEXT" class="helper_text"></span></div>
+        <div id="mce-responses" class="clear foot">
+            <div class="response" id="mce-error-response" style="display: none;"></div>
+            <div class="response" id="mce-success-response" style="display: none;"></div>
+        </div>
+    <div aria-hidden="true" style="position: absolute; left: -5000px;">
+        /* real people should not fill this in and expect good things - do not remove this or risk form bot signups */
+        <input type="text" name="b_c3e23f6715066c9306920614a_f5e0ffd1bd" tabindex="-1" value="">
+    </div>
+        <div class="optionalParent">
+            <div class="clear foot">
+                <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button" value="Subscribe">
+                <p style="margin: 0px auto;"><a href="http://eepurl.com/iFsRdM" title="Mailchimp - email marketing made easy and fun"><span style="display: inline-block; background-color: transparent; border-radius: 4px;"><img class="refferal_badge" src="https://digitalasset.intuit.com/render/content/dam/intuit/mc-fe/en_us/images/intuit-mc-rewards-text-dark.svg" alt="Intuit Mailchimp" style="width: 220px; height: 40px; display: flex; padding: 2px 0px; justify-content: center; align-items: center;"></span></a></p>
+            </div>
+        </div>
+    </div>
+</form>
+</div>
+<!-- Link to Bootstrap JS and jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</div>
+{% block script %}
+{% endblock %}
+
+</body>
+</html>

@@ -1,0 +1,129 @@
+{% extends 'homepage/base.html' %}
+{% load static %}
+{% block style %}
+<style>
+        mailchimp {
+        color: #ff0000
+        }
+        /* Reset some default styles for consistency */
+        body {
+            background-color: black !important;
+            /* Replace 'path/to/your/image.jpg' with the actual path to your image file */
+            background-size: cover;
+            /* You can use 'contain' or other values depending on your needs */
+            background-position: center center;
+            /* Adjust the position if needed */
+            background-repeat: no-repeat;
+            /* Prevent the background image from repeating */
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Style for the navigation bar */
+        nav {
+            position: fixed;
+            background-color: #333;
+            color: #fff;
+            padding: 10px !important;
+            text-align: center;
+            width: 100%;
+            top: 0;
+        }
+
+        /* Container for the dive section */
+        .container {
+            width: 80%;
+            display: flex !important;
+            /* Use flexbox for layout */
+            justify-content: flex-start !important;
+            /* Center the content horizontally */
+            height: 200vh !important;
+            /* Set the height of the container to 100% of the viewport height */
+            align-items: flex-end !important;
+            margin-top: 0px !important;
+            /* Add some top margin to create space underneath the fixed navigation bar */
+        }
+
+        /* Style for the text div */
+        .text {
+            flex: 1;
+            /* Take up remaining available space */
+            padding: 0px;
+            /* Add some padding for spacing */
+            background-color: #f4f4f4;
+            /* Set background color */
+            text-align: center;
+            /* Center the text */
+            /* Set Height */
+            height: 1100px;
+            width: 100px;
+            margin-top: 0px !important;
+            /*set the text and image div right under the nav bar*/
+            font-family: 'kaushan script', sans-serif;
+            font-size: 21px;
+            background: linear-gradient(to right, #ff8a00, #da1b60);
+            /*Set the font style for the .text class*/
+        }
+
+        /* Style for the image div */
+        .image {
+            flex: 1;
+            /* Take up remaining available space */
+            overflow: hidden;
+            /* Hide any overflowing content */
+        }
+
+        /* Responsive image styling */
+        .image img {
+            width: 100%;
+            /* Make the image fill its container */
+            height: auto;
+            /* Maintain the aspect ratio */
+            display: block;
+            /* Remove default image spacing */
+        }
+    </style>
+{% endblock %}
+{% block title %}Home - {{ block.super }}{% endblock %}
+
+{% block nav %}
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'home' %}">Home</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'About' %}">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'Services' %}">Services</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'Contact' %}">Contact</a>
+            </li>
+{% endblock%}
+
+{% block content %}
+<div class="container">
+    <!-- Text div -->
+    <div class="text">
+        <h1>Article written by Vladamir Degoutant</h1>
+        <p>
+
+In the hazy corridors of modern music, where genres collide and identities morph, The Jonestown Exorcists emerge as elusive architects of an otherworldly experience. Having traversed the nation with this enigmatic blues band, I stand witness to events that defy the rational confines of modern science. This isn't just about the music; it's about an inexplicable force that accompanies The Jonestown Exorcists wherever they go.
+
+From the Pacific shores to the heartland, this band's journey is marked not only by their transcendent musical prowess but by a series of inexplicable phenomena that have left audiences awestruck and questioning the boundaries of reality. It's as if the very air around them vibrates with an energy that transcends the notes they play.
+
+One cannot help but marvel at the mesmerizing fusion of psychedelic blues and their unique take on classics from the '90s. The musical experience they deliver is nothing short of extraordinary, but what sets them apart is the unexplainable occurrences that unfold in their wake. Tales of strange lights illuminating the stage, audiences collectively experiencing vivid dreams, and even reports of time bending itself to accommodate the sonic alchemy created by The Jonestown Exorcists.
+
+As I traveled alongside this mysterious ensemble, I found myself entangled in a web of the uncanny. In Portland, witnesses reported a spectral figure dancing in rhythm with the band, vanishing into thin air as the final chords faded. In the heart of the Midwest, entire audiences claimed to have shared a collective dream, vividly recounting a journey through time and space guided by the band's ethereal soundscapes.
+
+Attempts to rationalize these occurrences proved futile. Skepticism clashed with the tangible, leaving a haunting question lingering in the air - are The Jonestown Exorcists tapping into forces beyond our comprehension?
+
+Despite the eerie undertones that accompany their journey, it's crucial to acknowledge the undeniable brilliance of their music. The Jonestown Exorcists are not mere performers; they are conduits of an auditory experience that transcends the mundane. Their renditions of '90s classics are a testament to their musical mastery, a facet often overshadowed by the inexplicable events surrounding their performances.
+
+In the realm of The Jonestown Exorcists, music is not just heard; it is felt, experienced, and, in some inexplicable way, it alters the fabric of reality. As they continue their cross-country odyssey, leaving a trail of awe and wonder in their wake, one cannot help but wonder if this band has tapped into something beyond the reach of our understanding.
+
+The Jonestown Exorcists have become more than a musical ensemble; they are an enigma, challenging our perception of reality and inviting us to explore the mystical realms hidden within the notes they play. As they journey onward, one can only wonder what mysteries lie ahead and whether their music will continue to serve as a portal to the unknown.
+</p>
+    </div>
+</div>
+{% endblock %}
